@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.png";
 
+import { Link } from "react-router-dom";
+
 const NavBarContainer = styled.div`
   margin: 0;
   padding: 20px 30px;
@@ -24,7 +26,7 @@ const NavItem = styled.li`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 `;
@@ -46,10 +48,10 @@ const NavBar = () => {
       </IconContainer>
       <NavItemsContainer>
         <NavItem>
-          <NavLink href="/index">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/projects">Projects</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
         </NavItem>
       </NavItemsContainer>
     </NavBarContainer>
