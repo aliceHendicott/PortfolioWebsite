@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavBar from "./NavBar";
 
 const HeaderContainer = styled.div`
-  background-color: #08101f;
+  background-color: #393e41;
   color: white;
 `;
 
