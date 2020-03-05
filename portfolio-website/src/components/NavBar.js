@@ -18,7 +18,9 @@ const NavItemsContainer = styled.ul`
 `;
 
 const NavItem = styled.li`
-  margin-right: 20px;
+  margin-right: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
 
   &:last-of-type {
     margin-right: 0;
@@ -28,11 +30,26 @@ const NavItem = styled.li`
 const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
+  display: block;
+  padding: 15px 15px;
+
+  &:hover {
+    background-color: #212426;
+  }
+`;
+
+const NavLinkButton = styled(NavLink)`
+  background-color: #acdde7;
+  color: #393e41;
+
+  &:hover {
+    background-color: #84cddc;
+  }
 `;
 
 const IconContainer = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 `;
 
 const Logo = styled.img`
@@ -51,6 +68,9 @@ const NavBar = () => {
         </NavItem>
         <NavItem>
           <NavLink to="/projects">Projects</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLinkButton to="/contact">Contact</NavLinkButton>
         </NavItem>
       </NavItemsContainer>
     </NavBarContainer>
