@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import NavBar from "./NavBar";
 
 const HeaderContainer = styled.div`
   background-color: #393e41;
   color: white;
+  text-align: center;
 `;
 
 const Contents = styled.div`
@@ -13,14 +13,12 @@ const Contents = styled.div`
   padding: 10px 10px;
 `;
 
-const Header = () => {
+const Hero = () => {
   return (
     <HeaderContainer>
-      <Contents>
-        <NavBar />
-      </Contents>
+      <Contents>Test</Contents>
     </HeaderContainer>
   );
 };
 
-export default Header;
+export default Hero;

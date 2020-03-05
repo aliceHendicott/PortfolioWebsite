@@ -4,6 +4,17 @@ import logo from "../images/logo.png";
 
 import { Link } from "react-router-dom";
 
+const HeaderContainer = styled.div`
+  background-color: #393e41;
+  color: white;
+`;
+
+const Contents = styled.div`
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 10px;
+`;
+
 const NavBarContainer = styled.div`
   margin: 0;
   display: flex;
@@ -58,22 +69,26 @@ const Logo = styled.img`
 
 const NavBar = () => {
   return (
-    <NavBarContainer>
-      <IconContainer>
-        <Logo src={logo} />
-      </IconContainer>
-      <NavItemsContainer>
-        <NavItem>
-          <NavLink to="/">Home</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/projects">Projects</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLinkButton to="/contact">Contact</NavLinkButton>
-        </NavItem>
-      </NavItemsContainer>
-    </NavBarContainer>
+    <HeaderContainer>
+      <Contents>
+        <NavBarContainer>
+          <IconContainer>
+            <Logo src={logo} />
+          </IconContainer>
+          <NavItemsContainer>
+            <NavItem>
+              <NavLink to="/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/projects">Projects</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLinkButton to="/contact">Contact</NavLinkButton>
+            </NavItem>
+          </NavItemsContainer>
+        </NavBarContainer>
+      </Contents>
+    </HeaderContainer>
   );
 };
 
