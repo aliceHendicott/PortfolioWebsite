@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const NavBarContainer = styled.div`
   margin: 0;
-  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
 `;
