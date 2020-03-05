@@ -13,10 +13,30 @@ const Contents = styled.div`
   padding: 10px 10px;
 `;
 
+const Title = styled.h1`
+  font-size: 6rem;
+  margin: 30px 0px 0px 0px;
+`;
+
+const Subtitle = styled.p`
+  text-transform: uppercase;
+  margin: 0 0 50px 0;
+  font-size: 2rem;
+`;
+
+const KeyText = styled.span`
+  color: #d282a6;
+`;
+
 const Hero = () => {
   return (
     <HeaderContainer>
-      <Contents>Test</Contents>
+      <Contents>
+        <Title>
+          Hi, I'm <KeyText>Alice</KeyText>.
+        </Title>
+        <Subtitle>I'm a front-end web Developer.</Subtitle>
+      </Contents>
     </HeaderContainer>
   );
 };
