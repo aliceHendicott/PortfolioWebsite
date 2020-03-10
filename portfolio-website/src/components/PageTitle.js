@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const PageHeading = styled.h1`
-  font-size: 4rem;
+  font-size: 3.5rem;
+  font-weight: 400;
 
   &::after {
     content: "";
