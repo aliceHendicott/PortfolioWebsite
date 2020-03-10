@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { PageTitle } from "../components/PageTitle";
+
 const Contents = styled.div`
   max-width: 1120px;
   margin: 0 auto;
@@ -10,7 +12,7 @@ const Contents = styled.div`
 const About = () => {
   return (
     <Contents>
-      <h1>About</h1>
+      <PageTitle>About</PageTitle>
     </Contents>
   );
 };
