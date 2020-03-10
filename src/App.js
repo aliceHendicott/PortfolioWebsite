@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
 
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route path="/projects">
           <Projects />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/contact">
           <Contact />
