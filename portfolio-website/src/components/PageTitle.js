@@ -14,8 +14,8 @@ const PageHeading = styled.h1`
   }
 `;
 
-const PageTitle = ({ children }) => {
-  return <PageHeading>{children}</PageHeading>;
+const PageTitle = ({ className, children }) => {
+  return <PageHeading className={className}>{children}</PageHeading>;
 };
 
 export { PageTitle };
