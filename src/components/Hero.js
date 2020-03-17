@@ -7,7 +7,7 @@ const HeaderContainer = styled.div`
   background-color: #393e41;
   color: white;
   text-align: center;
-  margin-bottom: 180px;
+  margin-bottom: 230px;
 `;
 
 const Contents = styled.div`
