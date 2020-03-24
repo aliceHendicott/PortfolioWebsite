@@ -6,12 +6,6 @@ import { Contents } from "../components/Contents";
 import PageHeader from "../components/PageHeader";
 import Box from "../components/Box";
 
-const KeyText = styled.span`
-  font-weight: bold;
-  color: #d282a6;
-  text-transform: uppercase;
-`;
-
 const HeaderNoMargin = styled(PageTitle)`
   margin-top: 0px;
 `;
