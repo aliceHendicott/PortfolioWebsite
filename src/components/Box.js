@@ -8,6 +8,8 @@ const Container = styled.div`
   border-radius: 0.1875rem;
 `;
 
-const Box = ({ children }) => <Container>{children}</Container>;
+const Box = ({ className, children }) => (
+  <Container className={className}>{children}</Container>
+);
 
 export default Box;
