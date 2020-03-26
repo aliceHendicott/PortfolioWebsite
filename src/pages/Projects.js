@@ -32,11 +32,14 @@ const ProjectImage = styled.img`
 const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
   return (
     <ProjectCardContainer>
-      <ProjectImage src={imageSrc} alt={title} />
+      {imagePlacement === "left" && <ProjectImage src={imageSrc} alt={title} />}
       <ProjectContents>
         <HeaderNoMargin>{title}</HeaderNoMargin>
         <p>{children}</p>
       </ProjectContents>
+      {imagePlacement === "right" && (
+        <ProjectImage src={imageSrc} alt={title} />
+      )}
     </ProjectCardContainer>
   );
 };
