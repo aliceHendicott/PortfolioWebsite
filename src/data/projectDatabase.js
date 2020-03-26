@@ -1,4 +1,4 @@
-const Projects = [
+const projects = [
   {
     index: 1,
     imageSrc: "http://placekitten.com/400/400",
@@ -17,4 +17,4 @@ const Projects = [
   }
 ];
 
-export default Projects;
+export default projects;

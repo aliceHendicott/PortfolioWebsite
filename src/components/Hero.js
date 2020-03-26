@@ -4,7 +4,7 @@ import styled from "styled-components";
 import profileImg from "../images/profile.png";
 
 const HeaderContainer = styled.div`
-  background-color: #8d2b58;
+  background-color: #393e41;
   color: white;
   text-align: center;
   margin-bottom: 230px;

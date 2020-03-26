@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Projects from "../data/projectDatabase";
+import projects from "../data/projectDatabase";
 
 import PageHeader from "../components/PageHeader";
 import { PageTitle } from "../components/PageTitle";
@@ -16,6 +16,7 @@ const ProjectCardContainer = styled(Box)`
   display: inline-flex;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 50px;
 `;
 
 const ProjectContents = styled.div`
@@ -31,6 +32,7 @@ const HeaderNoMargin = styled(PageTitle)`
 
 const ProjectImage = styled.img`
   flex-basis: 400px;
+  max-width: 400px;
   object-fit: cover;
 `;
 
@@ -66,23 +68,23 @@ const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
 };
 
 const Projects = () => {
+  const ProjectCards = projects.map(
+    ({ index, imageSrc, title, link, description }) => (
+      <ProjectCard
+        imagePlacement={index % 2 === 1 ? "left" : "right"}
+        imageSrc={imageSrc}
+        title={title}
+        link={link}
+      >
+        {description}
+      </ProjectCard>
+    )
+  );
+
   return (
     <>
       <PageHeader>Projects</PageHeader>
-      <Contents>
-        <ProjectCard
-          imagePlacement="left"
-          imageSrc="http://placekitten.com/400/400"
-          title="Project Title"
-          link="#"
-        >
-          Doggo ipsum long woofer shoober aqua doggo long woofer, most angery
-          pupper I have ever seen borkdrive shooberino yapper, heckin good boys
-          and girls borkf. Dat tungg tho heckin good boys floofs stop it fren,
-          dat tungg tho long bois, long woofer smol. Ruff heckin angery woofer
-          adorable doggo aqua doggo, woofer.
-        </ProjectCard>
-      </Contents>
+      <Contents>{ProjectCards}</Contents>
     </>
   );
 };
