@@ -10,21 +10,33 @@ const ProjectCardContainer = styled(Box)`
   padding: 0px;
   display: inline-flex;
   width: 100%;
+  overflow: hidden;
+`;
+
+const ProjectContents = styled.div`
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const HeaderNoMargin = styled(PageTitle)`
+  margin-top: 0px;
 `;
 
 const ProjectImage = styled.img`
-  border-top-left-radius: 0.1875rem;
-  border-bottom-left-radius: 0.1875rem;
+  width: 400px;
+  height: 400px;
 `;
 
 const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
   return (
     <ProjectCardContainer>
       <ProjectImage src={imageSrc} alt={title} />
-      <div>
-        <PageTitle>{title}</PageTitle>
+      <ProjectContents>
+        <HeaderNoMargin>{title}</HeaderNoMargin>
         <p>{children}</p>
-      </div>
+      </ProjectContents>
     </ProjectCardContainer>
   );
 };
@@ -36,7 +48,7 @@ const Projects = () => {
       <Contents>
         <ProjectCard
           imagePlacement="left"
-          imageSrc="http://placekitten.com/g/300/300"
+          imageSrc="http://placekitten.com/500/500"
           title="Project Title"
           link="#"
         >
@@ -45,9 +57,7 @@ const Projects = () => {
           and girls borkf. Dat tungg tho heckin good boys floofs stop it fren,
           dat tungg tho long bois, long woofer smol. Ruff heckin angery woofer
           adorable doggo aqua doggo, woofer. Ur givin me a spook extremely
-          cuuuuuute he made many woofs fluffer wow very biscit length boy such
-          treat, dat tungg tho extremely cuuuuuute very jealous pupper borking
-          doggo porgo.
+          cuuuuuute he made many woofs fluffer.
         </ProjectCard>
       </Contents>
     </>
