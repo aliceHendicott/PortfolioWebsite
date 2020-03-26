@@ -43,18 +43,17 @@ const NavLink = styled(Link)`
   color: inherit;
   display: block;
   padding: 15px 15px;
-
+  border-radius: 0.1875rem;
   &:hover {
     background-color: #212426;
   }
 `;
 
 const NavLinkButton = styled(NavLink)`
-  background-color: #acdde7;
-  color: #393e41;
+  background-color: #8d2b58;
 
   &:hover {
-    background-color: #84cddc;
+    background-color: #6f2245;
   }
 `;
 
