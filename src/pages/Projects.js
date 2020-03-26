@@ -5,6 +5,10 @@ import PageHeader from "../components/PageHeader";
 import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
 import Box from "../components/Box";
+import ButtonLink from "../components/ButtonLink";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectCardContainer = styled(Box)`
   padding: 0px;
