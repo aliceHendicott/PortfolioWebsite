@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Projects from "../data/projectDatabase";
 
 import PageHeader from "../components/PageHeader";
 import { PageTitle } from "../components/PageTitle";
