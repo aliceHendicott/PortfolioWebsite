@@ -42,7 +42,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 15px 15px;
+  padding: 10px 15px;
   border-radius: 0.1875rem;
   &:hover {
     background-color: #212426;
@@ -50,6 +50,7 @@ const NavLink = styled(Link)`
 `;
 
 const NavLinkButton = styled(NavLink)`
+  padding: 10px 35px;
   background-color: #8d2b58;
 
   &:hover {

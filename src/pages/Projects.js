@@ -29,8 +29,21 @@ const HeaderNoMargin = styled(PageTitle)`
 `;
 
 const ProjectImage = styled.img`
-  width: 400px;
-  height: 400px;
+  flex-basis: 400px;
+  object-fit: cover;
+`;
+
+const ProjectDescription = styled.p`
+  margin-top: 0px;
+  margin-bottom: 2.4rem;
+`;
+
+const ButtonIcon = styled(FontAwesomeIcon)`
+  margin-left: 6px;
+`;
+
+const ProjectButtonLink = styled(ButtonLink)`
+  align-self: flex-end;
 `;
 
 const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
@@ -39,7 +52,10 @@ const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
       {imagePlacement === "left" && <ProjectImage src={imageSrc} alt={title} />}
       <ProjectContents>
         <HeaderNoMargin>{title}</HeaderNoMargin>
-        <p>{children}</p>
+        <ProjectDescription>{children}</ProjectDescription>
+        <ProjectButtonLink href={link}>
+          Go to project <ButtonIcon icon={faExternalLinkAlt} size="sm" />
+        </ProjectButtonLink>
       </ProjectContents>
       {imagePlacement === "right" && (
         <ProjectImage src={imageSrc} alt={title} />
@@ -55,7 +71,7 @@ const Projects = () => {
       <Contents>
         <ProjectCard
           imagePlacement="left"
-          imageSrc="http://placekitten.com/500/500"
+          imageSrc="http://placekitten.com/400/400"
           title="Project Title"
           link="#"
         >
@@ -63,8 +79,7 @@ const Projects = () => {
           pupper I have ever seen borkdrive shooberino yapper, heckin good boys
           and girls borkf. Dat tungg tho heckin good boys floofs stop it fren,
           dat tungg tho long bois, long woofer smol. Ruff heckin angery woofer
-          adorable doggo aqua doggo, woofer. Ur givin me a spook extremely
-          cuuuuuute he made many woofs fluffer.
+          adorable doggo aqua doggo, woofer.
         </ProjectCard>
       </Contents>
     </>

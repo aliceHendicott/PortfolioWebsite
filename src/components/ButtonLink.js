@@ -6,7 +6,7 @@ const Link = styled.a.attrs({ role: "button" })`
   background-color: #8d2b58;
   color: white;
   text-decoration: none;
-  padding: 15px 15px;
+  padding: 10px 35px;
   border-radius: 0.1875rem;
 
   &:hover {
