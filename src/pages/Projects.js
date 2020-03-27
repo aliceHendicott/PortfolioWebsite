@@ -16,7 +16,7 @@ const ProjectCardContainer = styled(Box)`
   display: inline-flex;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 `;
 
 const ProjectContents = styled.div`
@@ -47,6 +47,12 @@ const ButtonIcon = styled(FontAwesomeIcon)`
 
 const ProjectButtonLink = styled(ButtonLink)`
   align-self: flex-end;
+`;
+
+const ProjectCardsContainer = styled.div`
+  & > div:last-of-type {
+    margin-bottom: 0px;
+  }
 `;
 
 const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
@@ -84,7 +90,9 @@ const Projects = () => {
   return (
     <>
       <PageHeader>Projects</PageHeader>
-      <Contents>{ProjectCards}</Contents>
+      <Contents>
+        <ProjectCardsContainer>{ProjectCards}</ProjectCardsContainer>
+      </Contents>
     </>
   );
 };
