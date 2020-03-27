@@ -73,7 +73,7 @@ const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
   );
 };
 
-const Projects = () => {
+const Portfolio = () => {
   const ProjectCards = projects.map(
     ({ index, imageSrc, title, link, description }) => (
       <ProjectCard
@@ -89,7 +89,7 @@ const Projects = () => {
 
   return (
     <>
-      <PageHeader>Projects</PageHeader>
+      <PageHeader>Portfolio</PageHeader>
       <Contents>
         <ProjectCardsContainer>{ProjectCards}</ProjectCardsContainer>
       </Contents>
@@ -97,4 +97,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Portfolio;

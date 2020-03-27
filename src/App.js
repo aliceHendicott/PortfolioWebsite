@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Projects from "./pages/Projects";
+import Portfolio from "./pages/Portfolio";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -14,8 +14,8 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/projects">
-          <Projects />
+        <Route path="/portfolio">
+          <Portfolio />
         </Route>
         <Route path="/about">
           <About />
