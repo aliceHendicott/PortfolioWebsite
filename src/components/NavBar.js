@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../images/logo.png";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HeaderContainer = styled.div`
   background-color: #393e41;
@@ -38,7 +38,7 @@ const NavItem = styled.li`
   }
 `;
 
-const NavLink = styled(Link)`
+const NavBarLink = styled(NavLink).attrs({ activeClassName: "active-link" })`
   text-decoration: none;
   color: inherit;
   display: block;
@@ -49,7 +49,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NavLinkButton = styled(NavLink)`
+const NavLinkButton = styled(NavBarLink)`
   padding: 10px 35px;
   background-color: #8d2b58;
 
@@ -77,13 +77,15 @@ const NavBar = () => {
           </IconContainer>
           <NavItemsContainer>
             <NavItem>
-              <NavLink to="/">Home</NavLink>
+              <NavBarLink exact to="/">
+                Home
+              </NavBarLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/about">About</NavLink>
+              <NavBarLink to="/about">About</NavBarLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/portfolio">Portfolio</NavLink>
+              <NavBarLink to="/portfolio">Portfolio</NavBarLink>
             </NavItem>
             <NavItem>
               <NavLinkButton to="/contact">Contact</NavLinkButton>
