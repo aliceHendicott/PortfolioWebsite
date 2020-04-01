@@ -6,6 +6,10 @@ import { Contents } from "../components/Contents";
 import PageHeader from "../components/PageHeader";
 import Box from "../components/Box";
 
+import REAGroupLogo from "../images/REAGroupLogo.jpg";
+import qutLogo from "../images/qutLogo.jpg";
+import MCILogo from "../images/MCILogo.png";
+
 const HeaderNoMargin = styled(PageTitle)`
   margin-top: 0px;
 `;
@@ -50,7 +54,7 @@ const TimelineItemContainerRight = styled(TimelineItemContainer)`
 `;
 
 const TimelineItemContents = styled(Box)`
-  margin: 30px 50px;
+  margin: 20px 50px;
   position: relative;
   padding: 30px 20px;
 `;
@@ -122,19 +126,38 @@ const ItemTitle = styled.h4`
 const ItemSubtitle = styled.p`
   font-size: 1rem;
   margin-top: 5px;
+  margin-bottom: 0px;
   color: #808080;
 `;
 
 const ItemContents = styled.p`
   font-size: 1.1rem;
   margin-bottom: 0;
+  margin-top: 10px;
 `;
 
-const TimelineItem = ({ dateRange, icon, title, placement, children }) => {
+const ItemTopSection = styled.div`
+  display: inline-flex;
+`;
+
+const ItemLogo = styled.img`
+  max-width: 50px;
+  flex-basis: 50px;
+  margin-right: 10px;
+  object-fit: contain;
+  align-self: center;
+`;
+
+const TimelineItem = ({ dateRange, logo, title, placement, children }) => {
   const TimelineContent = () => (
     <>
-      <ItemTitle>{title}</ItemTitle>
-      <ItemSubtitle>{dateRange}</ItemSubtitle>
+      <ItemTopSection>
+        <ItemLogo src={logo} />
+        <div>
+          <ItemTitle>{title}</ItemTitle>
+          <ItemSubtitle>{dateRange}</ItemSubtitle>
+        </div>
+      </ItemTopSection>
       <ItemContents>{children}</ItemContents>
     </>
   );
@@ -234,6 +257,7 @@ const About = () => {
             title="Queensland University of Technology"
             placement="left"
             dateRange="Feb 2016 - Nov 2019"
+            logo={qutLogo}
           >
             Bachelor of Information Technology (Computer Science) and Bachelor
             of Mathematics (Applied and Computational)
@@ -242,6 +266,7 @@ const About = () => {
             title="MCI"
             placement="right"
             dateRange="Mar 2016 - Dec 2019"
+            logo={MCILogo}
           >
             Website Master (Wordpress)
           </TimelineItem>
@@ -249,6 +274,7 @@ const About = () => {
             title="REA Group"
             placement="left"
             dateRange="Feb 2020 - present"
+            logo={REAGroupLogo}
           >
             Graduate Software Developer
           </TimelineItem>
