@@ -238,7 +238,20 @@ const About = () => {
             Bachelor of Information Technology (Computer Science) and Bachelor
             of Mathematics (Applied and Computational)
           </TimelineItem>
-          <TimelineItem title="MCI" placement="right"></TimelineItem>
+          <TimelineItem
+            title="MCI"
+            placement="right"
+            dateRange="Mar 2016 - Dec 2019"
+          >
+            Website Master (Wordpress)
+          </TimelineItem>
+          <TimelineItem
+            title="REA Group"
+            placement="left"
+            dateRange="Feb 2020 - present"
+          >
+            Graduate Software Developer
+          </TimelineItem>
         </Timeline>
         <PageTitle>Skills</PageTitle>
         <PageTitle>Interests</PageTitle>
