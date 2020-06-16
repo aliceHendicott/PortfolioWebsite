@@ -11,9 +11,31 @@ import qutLogo from "../images/qutLogo.jpg";
 import MCILogo from "../images/MCILogo.png";
 
 import Timeline, { TimelineItem } from "../components/Timeline";
+import Skill from "../components/Skill";
 
 const HeaderNoMargin = styled(PageTitle)`
   margin-top: 0px;
+`;
+
+const SkillsContainer = styled.div`
+  display: flex;
+
+  & > div:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+const SkillsBox = styled(Box)`
+  flex: 1 1 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+`;
+
+const SkillsTitle = styled.h2`
+  font-weight: 400;
+  padding-bottom: 5px;
+  margin: 0;
+  border-bottom: 2px solid #8d2b58;
 `;
 
 const About = () => {
@@ -65,6 +87,18 @@ const About = () => {
           </TimelineItem>
         </Timeline>
         <PageTitle>Skills</PageTitle>
+        <SkillsContainer>
+          <SkillsBox>
+            <SkillsTitle>Professional Skills</SkillsTitle>
+            <Skill skill="CSS" proficiencyLevel={5} />
+            <Skill skill="HTML" proficiencyLevel={5} />
+            <Skill skill="Javascript" proficiencyLevel={3} />
+            <Skill skill="React" proficiencyLevel={3} />
+          </SkillsBox>
+          <SkillsBox>
+            <SkillsTitle>Personal Skills</SkillsTitle>
+          </SkillsBox>
+        </SkillsContainer>
         <PageTitle>Interests</PageTitle>
       </Contents>
     </>
