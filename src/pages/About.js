@@ -5,10 +5,12 @@ import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
 import PageHeader from "../components/PageHeader";
 import Box from "../components/Box";
+import ButtonLink from "../components/ButtonLink";
 
 import REAGroupLogo from "../images/REAGroupLogo.jpg";
 import qutLogo from "../images/qutLogo.jpg";
 import MCILogo from "../images/MCILogo.png";
+import Resume from "../assets/Resume.pdf";
 
 import Timeline, { TimelineItem } from "../components/Timeline";
 import Skill from "../components/Skill";
@@ -89,17 +91,21 @@ const About = () => {
         <PageTitle>Skills</PageTitle>
         <SkillsContainer>
           <SkillsBox>
-            <SkillsTitle>Professional Skills</SkillsTitle>
-            <Skill skill="CSS" proficiencyLevel={5} />
-            <Skill skill="HTML" proficiencyLevel={5} />
+            <SkillsTitle>Technical Skills</SkillsTitle>
+            <Skill skill="HTML &amp; CSS" proficiencyLevel={5} />
             <Skill skill="Javascript" proficiencyLevel={3} />
             <Skill skill="React" proficiencyLevel={3} />
           </SkillsBox>
           <SkillsBox>
-            <SkillsTitle>Personal Skills</SkillsTitle>
+            <SkillsTitle>Non-Technical Skills</SkillsTitle>
+            <Skill skill="Quick Learner" proficiencyLevel={5} />
+            <Skill skill="Applied Mathematics" proficiencyLevel={4} />
+            <Skill skill="UX Design" proficiencyLevel={3} />
           </SkillsBox>
         </SkillsContainer>
-        <PageTitle>Interests</PageTitle>
+        <PageTitle>Resume</PageTitle>
+        <p>Want to know more? Download my full resume below.</p>
+        <ButtonLink href={Resume}>Download Resume</ButtonLink>
       </Contents>
     </>
   );
