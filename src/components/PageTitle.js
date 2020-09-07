@@ -11,7 +11,7 @@ const PageHeading = styled.h1`
     display: block;
     width: 6rem;
     height: 0.6rem;
-    background-color: #d282a6;
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

@@ -37,7 +37,7 @@ const SkillsTitle = styled.h2`
   font-weight: 400;
   padding-bottom: 5px;
   margin: 0;
-  border-bottom: 2px solid #8d2b58;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 `;
 
 const About = () => {

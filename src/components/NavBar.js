@@ -5,7 +5,7 @@ import logo from "../images/logo.png";
 import { NavLink } from "react-router-dom";
 
 const HeaderContainer = styled.div`
-  background-color: #393e41;
+  background-color: ${({ theme }) => theme.colors.background01};
   color: white;
   position: fixed;
   z-index: 30;
@@ -44,16 +44,16 @@ const NavBarLink = styled(NavLink).attrs({ activeClassName: "active-link" })`
   padding: 10px 15px;
   border-radius: 0.1875rem;
   &:hover {
-    background-color: #212426;
+    background-color: ${({ theme }) => theme.colors.backgroundHover};
   }
 `;
 
 const NavLinkButton = styled(NavBarLink)`
   padding: 10px 35px;
-  background-color: #8d2b58;
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   &:hover {
-    background-color: #6f2245;
+    background-color: ${({ theme }) => theme.colors.secondaryHover};
   }
 `;
 

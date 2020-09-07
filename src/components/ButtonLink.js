@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 const Link = styled.a.attrs({ role: "button" })`
   display: inline-block;
-  background-color: #8d2b58;
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: white;
   text-decoration: none;
   padding: 10px 35px;
   border-radius: 0.1875rem;
 
   &:hover {
-    background-color: #6f2245;
+    background-color: ${({ theme }) => theme.colors.secondaryHover};
   }
 `;
 

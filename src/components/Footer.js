@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 const FooterContainer = styled.div`
-  background-color: #393e41;
+  background-color: ${({ theme }) => theme.colors.background01};
   color: white;
   font-size: 1rem;
   margin-top: 80px;
@@ -14,7 +14,7 @@ const FooterContainer = styled.div`
 
 const FlexGrid = styled.div`
   text-align: center;
-  @media (min-width: 600px) {
+  ${({ theme }) => theme.breakpoints.medium} {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +37,7 @@ const LinkedinIcon = styled(FontAwesomeIcon)`
 
 const GithubIcon = styled(FontAwesomeIcon)`
   &:hover {
-    color: #f5cee0;
+    color: ${({ theme }) => theme.colors.tertiary};
   }
 `;
 

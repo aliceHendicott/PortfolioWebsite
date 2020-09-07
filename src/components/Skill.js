@@ -30,7 +30,7 @@ const RatingBubble = styled.div`
 `;
 
 const ActiveRatingBubble = styled(RatingBubble)`
-  background-color: #8d2b58;
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const Rating = ({ rating }) => {

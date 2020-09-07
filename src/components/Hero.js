@@ -4,7 +4,7 @@ import styled from "styled-components";
 import profileImg from "../images/profile.png";
 
 const HeaderContainer = styled.div`
-  background-color: #393e41;
+  background-color: ${({ theme }) => theme.colors.background01};
   color: white;
   text-align: center;
   margin-bottom: 200px;
@@ -20,7 +20,7 @@ const Contents = styled.div`
 const Title = styled.h1`
   margin: 30px 0px 0px 0px;
   font-size: 3.5rem;
-  @media (min-width: 600px) {
+  ${({ theme }) => theme.breakpoints.medium} {
     font-size: 6rem;
   }
 `;
@@ -29,20 +29,20 @@ const Subtitle = styled.p`
   text-transform: uppercase;
   margin: 0 0 50px 0;
   font-size: 1.2rem;
-  @media (min-width: 600px) {
+  ${({ theme }) => theme.breakpoints.medium} {
     font-size: 2rem;
   }
 `;
 
 const KeyText = styled.span`
-  color: #d282a6;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const ImageRing = styled.div`
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  border: 5px solid #d282a6;
+  border: 5px solid ${({ theme }) => theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +52,7 @@ const ImageRing = styled.div`
   top: 280px;
   left: 0;
   right: 0;
-  @media (min-width: 600px) {
+  ${({ theme }) => theme.breakpoints.medium} {
     top: 345px;
   }
 `;
@@ -62,7 +62,7 @@ const ProfileImage = styled.img`
   height: 200px;
   border-radius: 50%;
   z-index: 10;
-  border: 3px solid #f5cee0;
+  border: 3px solid ${({ theme }) => theme.colors.tertiary};
 `;
 
 const Hero = () => {

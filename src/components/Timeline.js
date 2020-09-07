@@ -22,7 +22,7 @@ const TimelineItemContainerLeft = styled(TimelineItemContainer)`
     right: calc(-18px - 4px);
     border: 4px solid white;
     z-index: 10;
-    background-color: #8d2b58;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -38,7 +38,7 @@ const TimelineItemContainerRight = styled(TimelineItemContainer)`
     left: calc(-18px - 4px);
     border: 4px solid white;
     z-index: 10;
-    background-color: #8d2b58;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 

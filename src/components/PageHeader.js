@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Contents } from "./Contents";
 
 const HeaderContainer = styled.div`
-  background-color: #393e41;
+  background-color: ${({ theme }) => theme.colors.background01};
   color: white;
   text-align: center;
   margin-bottom: 80px;
@@ -16,7 +16,7 @@ const Title = styled.h1`
 `;
 
 const KeyText = styled.span`
-  color: #d282a6;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const PageHeader = ({ children }) => (
