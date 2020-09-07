@@ -7,6 +7,7 @@ const HeaderContainer = styled.div`
   color: white;
   text-align: center;
   margin-bottom: 80px;
+  padding-top: 110px;
 `;
 
 const Title = styled.h1`

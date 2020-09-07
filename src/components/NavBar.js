@@ -7,18 +7,17 @@ import { NavLink } from "react-router-dom";
 const HeaderContainer = styled.div`
   background-color: #393e41;
   color: white;
-`;
-
-const Contents = styled.div`
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 10px 10px;
+  position: fixed;
+  z-index: 30;
+  width: 100%;
+  box-shadow: 0px 3px 7px 0px rgba(41, 41, 41, 1);
 `;
 
 const NavBarContainer = styled.div`
-  margin: 0;
+  margin: 0px;
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
 `;
 
 const NavItemsContainer = styled.ul`
@@ -70,29 +69,27 @@ const Logo = styled.img`
 const NavBar = () => {
   return (
     <HeaderContainer>
-      <Contents>
-        <NavBarContainer>
-          <IconContainer>
-            <Logo src={logo} />
-          </IconContainer>
-          <NavItemsContainer>
-            <NavItem>
-              <NavBarLink exact to="/">
-                Home
-              </NavBarLink>
-            </NavItem>
-            <NavItem>
-              <NavBarLink to="/about">About</NavBarLink>
-            </NavItem>
-            <NavItem>
-              <NavBarLink to="/portfolio">Portfolio</NavBarLink>
-            </NavItem>
-            <NavItem>
-              <NavLinkButton to="/contact">Contact</NavLinkButton>
-            </NavItem>
-          </NavItemsContainer>
-        </NavBarContainer>
-      </Contents>
+      <NavBarContainer>
+        <IconContainer>
+          <Logo src={logo} />
+        </IconContainer>
+        <NavItemsContainer>
+          <NavItem>
+            <NavBarLink exact to="/">
+              Home
+            </NavBarLink>
+          </NavItem>
+          <NavItem>
+            <NavBarLink to="/about">About</NavBarLink>
+          </NavItem>
+          <NavItem>
+            <NavBarLink to="/portfolio">Portfolio</NavBarLink>
+          </NavItem>
+          <NavItem>
+            <NavLinkButton to="/contact">Contact</NavLinkButton>
+          </NavItem>
+        </NavItemsContainer>
+      </NavBarContainer>
     </HeaderContainer>
   );
 };
