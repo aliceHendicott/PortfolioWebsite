@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Link = styled.a.attrs({ role: "button" })`
-  display: block;
+  display: inline-block;
   background-color: #8d2b58;
   color: white;
   text-decoration: none;

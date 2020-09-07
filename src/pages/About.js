@@ -5,9 +5,39 @@ import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
 import PageHeader from "../components/PageHeader";
 import Box from "../components/Box";
+import ButtonLink from "../components/ButtonLink";
+
+import REAGroupLogo from "../images/REAGroupLogo.jpg";
+import qutLogo from "../images/qutLogo.jpg";
+import MCILogo from "../images/MCILogo.png";
+import Resume from "../assets/Resume.pdf";
+
+import Timeline, { TimelineItem } from "../components/Timeline";
+import Skill from "../components/Skill";
 
 const HeaderNoMargin = styled(PageTitle)`
   margin-top: 0px;
+`;
+
+const SkillsContainer = styled.div`
+  display: flex;
+
+  & > div:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+const SkillsBox = styled(Box)`
+  flex: 1 1 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+`;
+
+const SkillsTitle = styled.h2`
+  font-weight: 400;
+  padding-bottom: 5px;
+  margin: 0;
+  border-bottom: 2px solid #8d2b58;
 `;
 
 const About = () => {
@@ -30,10 +60,52 @@ const About = () => {
             Currently I am working on the design system for REA Group.
           </p>
         </Box>
-        <PageTitle>Education</PageTitle>
+        <PageTitle>My Journey</PageTitle>
+        <Timeline>
+          <TimelineItem
+            title="Queensland University of Technology"
+            placement="left"
+            dateRange="Feb 2016 - Nov 2019"
+            logo={qutLogo}
+          >
+            Bachelor of Information Technology (Computer Science) and Bachelor
+            of Mathematics (Applied and Computational)
+          </TimelineItem>
+          <TimelineItem
+            title="MCI"
+            placement="right"
+            dateRange="Mar 2016 - Dec 2019"
+            logo={MCILogo}
+          >
+            Website Master (Wordpress)
+          </TimelineItem>
+          <TimelineItem
+            title="REA Group"
+            placement="left"
+            dateRange="Feb 2020 - present"
+            logo={REAGroupLogo}
+          >
+            Graduate Software Developer
+          </TimelineItem>
+        </Timeline>
         <PageTitle>Skills</PageTitle>
-        <PageTitle>Work Experience</PageTitle>
-        <PageTitle>Interests</PageTitle>
+        <SkillsContainer>
+          <SkillsBox>
+            <SkillsTitle>Technical Skills</SkillsTitle>
+            <Skill skill="HTML &amp; CSS" proficiencyLevel={5} />
+            <Skill skill="Javascript" proficiencyLevel={3} />
+            <Skill skill="React" proficiencyLevel={3} />
+          </SkillsBox>
+          <SkillsBox>
+            <SkillsTitle>Non-Technical Skills</SkillsTitle>
+            <Skill skill="Quick Learner" proficiencyLevel={5} />
+            <Skill skill="Applied Mathematics" proficiencyLevel={4} />
+            <Skill skill="UX Design" proficiencyLevel={3} />
+          </SkillsBox>
+        </SkillsContainer>
+        <PageTitle>Resume</PageTitle>
+        <p>Want to know more? Download my full resume below.</p>
+        <ButtonLink href={Resume}>Download Resume</ButtonLink>
       </Contents>
     </>
   );
