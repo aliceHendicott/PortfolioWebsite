@@ -7,7 +7,7 @@ import { theme } from "./theme";
 import Portfolio from "./pages/Portfolio";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -23,8 +23,8 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/contact">
-            <Contact />
+          <Route path="/blog">
+            <Blog />
           </Route>
           <Route path="/">
             <Home />

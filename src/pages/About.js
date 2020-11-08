@@ -3,41 +3,87 @@ import styled from "styled-components";
 
 import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
-import PageHeader from "../components/PageHeader";
-import Box from "../components/Box";
-import ButtonLink from "../components/ButtonLink";
 
-import REAGroupLogo from "../images/REAGroupLogo.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReact,
+  faJs,
+  faCss3,
+  faHtml5,
+  faSass,
+  faWordpress,
+  faGit,
+} from "@fortawesome/free-brands-svg-icons";
+import scalaLogo from "../images/ScalaLogo.png";
+
+import PageHeader from "../components/PageHeader";
+
+import REAGroupLogo from "../images/REAGroupLogo.png";
 import qutLogo from "../images/qutLogo.jpg";
 import MCILogo from "../images/MCILogo.png";
 import Resume from "../assets/Resume.pdf";
 
 import Timeline, { TimelineItem } from "../components/Timeline";
-import Skill from "../components/Skill";
 
-const HeaderNoMargin = styled(PageTitle)`
-  margin-top: 0px;
-`;
+const FeatureBoxHeader = styled(PageTitle)`
+  margin-top: 6rem;
+  color: ${({ theme }) => theme.colors.primary};
 
-const SkillsContainer = styled.div`
-  display: flex;
-
-  & > div:last-of-type {
-    margin-right: 0;
+  &::after {
+    background-color: ${({ theme }) => theme.colors.text02};
   }
 `;
 
-const SkillsBox = styled(Box)`
-  flex: 1 1 0;
-  margin-right: 20px;
-  margin-bottom: 20px;
+const FeatureBoxHeaderNoMargin = styled(FeatureBoxHeader)`
+  margin-top: 0rem;
+  margin-bottom: 0.6rem;
 `;
 
-const SkillsTitle = styled.h2`
-  font-weight: 400;
-  padding-bottom: 5px;
-  margin: 0;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+const FeatureBox = styled.div`
+  margin-top: 9rem;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const FeatureBoxContents = styled(Contents)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+`;
+
+const FeatureBoxLink = styled.a.attrs({ role: "button" })`
+  display: inline-block;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  text-decoration: none;
+  padding: 10px 35px;
+  border-radius: 10px;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: inset 13.5em 0 0 0 ${({ theme }) => theme.colors.text02};
+    border-color: ${({ theme }) => theme.colors.text02};
+  }
+`;
+
+const LogoContainer = styled.div`
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  box-sizing: border-box;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  font-size: 9rem;
+  color: ${({ theme }) => theme.colors.text02};
+`;
+
+const ScalaIcon = styled.img`
+  height: 9rem;
 `;
 
 const About = () => {
@@ -45,21 +91,33 @@ const About = () => {
     <>
       <PageHeader>About me</PageHeader>
       <Contents>
-        <Box>
-          <HeaderNoMargin>Hi there!</HeaderNoMargin>
-          <p>
-            My name is Alice Hendicott and am currently working as a Software
-            Developer Graduate for REA Group based in Melbourne, Australia. I
-            graduated with a double bachelors degree of Applied Mathematics and
-            Computer Science from Queensland University of Technology, so in a
-            nutshell I love problem solving.
-          </p>
-          <p>
-            For the past three years I have worked in front end web development
-            but I am also planning to dabble some more in the back end world.
-            Currently I am working on the design system for REA Group.
-          </p>
-        </Box>
+        <PageTitle>Hi there!</PageTitle>
+        <p>
+          My name is Alice Hendicott and am currently working as a Software
+          Developer Graduate for REA Group based in Melbourne, Australia. I
+          graduated with a double bachelors degree of Applied Mathematics and
+          Computer Science from Queensland University of Technology, so in a
+          nutshell I love problem solving.
+        </p>
+        <p>
+          For the past three years I have worked in front end web development
+          creating conference websites for events accros the world. In my
+          current role as a graduate, I have had the opportunity to work across
+          several teams in REA Group. For 6 months, I was working on
+          maintaining, improving and integrating the design system used accross
+          our websites. I have also had the opportunnity to contribute to a
+          major feature release on Australia’s number one website in property. I
+          am currently working on improving my back end development skills by
+          working on some of our customer systems.
+        </p>
+      </Contents>
+      <FeatureBox>
+        <FeatureBoxContents>
+          <FeatureBoxHeaderNoMargin>Resume</FeatureBoxHeaderNoMargin>
+          <FeatureBoxLink href={Resume}>Download Resume</FeatureBoxLink>
+        </FeatureBoxContents>
+      </FeatureBox>
+      <Contents>
         <PageTitle>My Journey</PageTitle>
         <Timeline>
           <TimelineItem
@@ -88,25 +146,22 @@ const About = () => {
             Graduate Software Developer
           </TimelineItem>
         </Timeline>
-        <PageTitle>Skills</PageTitle>
-        <SkillsContainer>
-          <SkillsBox>
-            <SkillsTitle>Technical Skills</SkillsTitle>
-            <Skill skill="HTML &amp; CSS" proficiencyLevel={5} />
-            <Skill skill="Javascript" proficiencyLevel={3} />
-            <Skill skill="React" proficiencyLevel={3} />
-          </SkillsBox>
-          <SkillsBox>
-            <SkillsTitle>Non-Technical Skills</SkillsTitle>
-            <Skill skill="Quick Learner" proficiencyLevel={5} />
-            <Skill skill="Applied Mathematics" proficiencyLevel={4} />
-            <Skill skill="UX Design" proficiencyLevel={3} />
-          </SkillsBox>
-        </SkillsContainer>
-        <PageTitle>Resume</PageTitle>
-        <p>Want to know more? Download my full resume below.</p>
-        <ButtonLink href={Resume}>Download Resume</ButtonLink>
       </Contents>
+      <FeatureBox>
+        <Contents>
+          <FeatureBoxHeader>Experience with</FeatureBoxHeader>
+          <LogoContainer>
+            <Icon icon={faReact} size="lg" title="React" />
+            <Icon icon={faJs} size="lg" title="Javascript" />
+            <Icon icon={faCss3} size="lg" title="CSS" />
+            <Icon icon={faSass} size="lg" title="Sass" />
+            <Icon icon={faHtml5} size="lg" title="HTML" />
+            <Icon icon={faWordpress} size="lg" title="Wordpress" />
+            <Icon icon={faGit} size="lg" title="Git" />
+            <ScalaIcon src={scalaLogo} title="Scala" />
+          </LogoContainer>
+        </Contents>
+      </FeatureBox>
     </>
   );
 };

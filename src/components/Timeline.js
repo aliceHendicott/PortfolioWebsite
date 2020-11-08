@@ -8,48 +8,40 @@ const TimelineItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 5px rgba(245, 206, 224, 0.52);
+    z-index: 10;
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
 `;
 
 const TimelineItemContainerLeft = styled(TimelineItemContainer)`
   margin-right: 50%;
 
   &::after {
-    content: "";
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    right: calc(-18px - 4px);
-    border: 4px solid white;
-    z-index: 10;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    right: -18px;
   }
 `;
 
 const TimelineItemContainerRight = styled(TimelineItemContainer)`
   margin-left: 50%;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    left: calc(-18px - 4px);
-    border: 4px solid white;
-    z-index: 10;
-    background-color: ${({ theme }) => theme.colors.secondary};
+  &::after {
+    left: -18px;
   }
 `;
 
 const TimelineItemContents = styled(Box)`
-  margin: 20px 50px;
   position: relative;
   padding: 30px 20px;
-`;
 
-const TimelineItemContentsLeft = styled(TimelineItemContents)`
-  &::after {
+  &:after {
     z-index: -10;
     content: "";
     position: absolute;
@@ -57,13 +49,12 @@ const TimelineItemContentsLeft = styled(TimelineItemContents)`
     height: 16px;
     bottom: 0;
     top: calc(50% - 8px);
-    right: -8px;
     transform: rotate(45deg);
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.background01};
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0.0625rem 0.5rem 0px;
   }
 
-  &::before {
+  &:before {
     z-index: 20;
     content: "";
     position: absolute;
@@ -72,39 +63,32 @@ const TimelineItemContentsLeft = styled(TimelineItemContents)`
     margin-right: 0;
     bottom: 0;
     top: calc(50% - 8px);
-    right: -8px;
     transform: rotate(45deg);
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.background01};
+  }
+`;
+
+const TimelineItemContentsLeft = styled(TimelineItemContents)`
+  margin: 20px 50px 20px 0px;
+
+  &::after {
+    right: -8px;
+  }
+
+  &::before {
+    right: -8px;
   }
 `;
 
 const TimelineItemContentsRight = styled(TimelineItemContents)`
+  margin: 20px 0px 20px 50px;
+
   &::after {
-    z-index: -10;
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    bottom: 0;
-    top: calc(50% - 8px);
     left: -8px;
-    transform: rotate(45deg);
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0.0625rem 0.5rem 0px;
   }
 
   &::before {
-    z-index: 20;
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    margin-right: 0;
-    bottom: 0;
-    top: calc(50% - 8px);
     left: -8px;
-    transform: rotate(45deg);
-    background-color: white;
   }
 `;
 
@@ -123,6 +107,7 @@ const ItemContents = styled.p`
   font-size: 1.1rem;
   margin-bottom: 0;
   margin-top: 10px;
+  text-align: left;
 `;
 
 const ItemTopSection = styled.div`
@@ -182,7 +167,7 @@ const TimelineBar = styled.div`
     bottom: 0;
     left: calc(50% - 2px);
     width: 4px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -196,7 +181,7 @@ const TimelineContainer = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.secondary};
     left: calc(50% - 5px);
   }
 
@@ -207,7 +192,7 @@ const TimelineContainer = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.secondary};
     left: calc(50% - 5px);
   }
 `;

@@ -3,87 +3,28 @@ import styled from "styled-components";
 import projects from "../data/projectDatabase";
 
 import PageHeader from "../components/PageHeader";
-import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
-import Box from "../components/Box";
-import ButtonLink from "../components/ButtonLink";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-
-const ProjectCardContainer = styled(Box)`
-  padding: 0px;
-  display: inline-flex;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 60px;
-`;
-
-const ProjectContents = styled.div`
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const HeaderNoMargin = styled(PageTitle)`
-  margin-top: 0px;
-`;
-
-const ProjectImage = styled.img`
-  flex-basis: 400px;
-  max-width: 400px;
-  object-fit: cover;
-`;
-
-const ProjectDescription = styled.p`
-  margin-top: 0px;
-  margin-bottom: 2.4rem;
-`;
-
-const ButtonIcon = styled(FontAwesomeIcon)`
-  margin-left: 6px;
-`;
-
-const ProjectButtonLink = styled(ButtonLink)`
-  align-self: flex-end;
-`;
+import { ProjectCard as NewProjectCard } from "../components/ProjectCard";
 
 const ProjectCardsContainer = styled.div`
-  & > div:last-of-type {
-    margin-bottom: 0px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  margin: 9rem 0;
+  box-sizing: border-box;
 `;
-
-const ProjectCard = ({ imagePlacement, imageSrc, title, children, link }) => {
-  return (
-    <ProjectCardContainer>
-      {imagePlacement === "left" && <ProjectImage src={imageSrc} alt={title} />}
-      <ProjectContents>
-        <HeaderNoMargin>{title}</HeaderNoMargin>
-        <ProjectDescription>{children}</ProjectDescription>
-        <ProjectButtonLink href={link}>
-          Go to project <ButtonIcon icon={faExternalLinkAlt} size="sm" />
-        </ProjectButtonLink>
-      </ProjectContents>
-      {imagePlacement === "right" && (
-        <ProjectImage src={imageSrc} alt={title} />
-      )}
-    </ProjectCardContainer>
-  );
-};
 
 const Portfolio = () => {
   const ProjectCards = projects.map(
-    ({ index, imageSrc, title, link, description }) => (
-      <ProjectCard
-        imagePlacement={index % 2 === 1 ? "left" : "right"}
+    ({ imageSrc, title, link, description, badges }) => (
+      <NewProjectCard
         imageSrc={imageSrc}
         title={title}
+        description={description}
         link={link}
-      >
-        {description}
-      </ProjectCard>
+        badges={badges}
+      />
     )
   );
 

@@ -4,79 +4,78 @@ import styled from "styled-components";
 import profileImg from "../images/profile.png";
 
 const HeaderContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.background01};
+  background-image: ${({ theme }) =>
+    `linear-gradient(${theme.colors.primary}, ${theme.colors.background01})`};
   color: white;
-  text-align: center;
-  margin-bottom: 200px;
-  padding-top: 80px;
+  height: 100vh;
 `;
 
 const Contents = styled.div`
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 40px 10px 110px 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 100px 0;
+  ${({ theme }) => theme.breakpoints.large} {
+    flex-direction: row;
+    max-width: 1020px;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 100%;
+  }
+`;
+
+const Heading = styled.div`
+  text-align: center;
+
+  ${({ theme }) => theme.breakpoints.large} {
+    text-align: left;
+  }
 `;
 
 const Title = styled.h1`
-  margin: 30px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 3.5rem;
+
   ${({ theme }) => theme.breakpoints.medium} {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 `;
 
 const Subtitle = styled.p`
-  text-transform: uppercase;
   margin: 0 0 50px 0;
   font-size: 1.2rem;
-  ${({ theme }) => theme.breakpoints.medium} {
-    font-size: 2rem;
-  }
-`;
-
-const KeyText = styled.span`
   color: ${({ theme }) => theme.colors.primary};
-`;
-
-const ImageRing = styled.div`
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 5px solid ${({ theme }) => theme.colors.primary};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  top: 280px;
-  left: 0;
-  right: 0;
   ${({ theme }) => theme.breakpoints.medium} {
-    top: 345px;
+    font-size: 3rem;
   }
 `;
 
-const ProfileImage = styled.img`
-  width: 200px;
-  height: 200px;
+const ProfileImage = styled.div`
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  z-index: 10;
-  border: 3px solid ${({ theme }) => theme.colors.tertiary};
+  box-shadow: inset 4px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  background-image: ${({ src }) => `url(${src})`};
+  background-size: cover;
+  ${({ theme }) => theme.breakpoints.large} {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 const Hero = () => {
   return (
     <HeaderContainer>
       <Contents>
-        <Title>
-          Hi, I'm <KeyText>Alice</KeyText>.
-        </Title>
-        <Subtitle>I'm a front-end web Developer.</Subtitle>
-      </Contents>
-      <ImageRing>
         <ProfileImage src={profileImg} />
-      </ImageRing>
+        <Heading>
+          <Title>Hi, I'm Alice.</Title>
+          <Subtitle>a web developer.</Subtitle>
+        </Heading>
+      </Contents>
     </HeaderContainer>
   );
 };

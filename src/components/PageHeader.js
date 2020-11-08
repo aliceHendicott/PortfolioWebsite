@@ -3,28 +3,24 @@ import styled from "styled-components";
 import { Contents } from "./Contents";
 
 const HeaderContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.background01};
+  background-image: ${({ theme }) =>
+    `linear-gradient(${theme.colors.primary}, ${theme.colors.background01})`};
   color: white;
-  text-align: center;
-  margin-bottom: 80px;
-  padding-top: 110px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Title = styled.h1`
-  font-size: 6rem;
-  margin: 10px 0px 60px 0px;
-`;
-
-const KeyText = styled.span`
+  font-size: 5rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
 const PageHeader = ({ children }) => (
   <HeaderContainer>
     <Contents>
-      <Title>
-        <KeyText>{children}</KeyText>.
-      </Title>
+      <Title>{children}.</Title>
     </Contents>
   </HeaderContainer>
 );

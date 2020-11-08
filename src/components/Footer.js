@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faGithubSquare,
+  faCodepen,
+} from "@fortawesome/free-brands-svg-icons";
 
 const FooterContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.background01};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: white;
   font-size: 1rem;
-  margin-top: 80px;
   padding: 5px 10px;
 `;
 
@@ -24,20 +27,14 @@ const FlexGrid = styled.div`
 const CopyrightStatement = styled.div`
   font-size: 0.8rem;
   margin-bottom: 5px;
-  @media (min-width: 600px) {
+  ${({ theme }) => theme.breakpoints.medium} {
     margin-bottom: 0;
   }
 `;
 
-const LinkedinIcon = styled(FontAwesomeIcon)`
+const Icon = styled(FontAwesomeIcon)`
   &:hover {
-    color: #0e76a8;
-  }
-`;
-
-const GithubIcon = styled(FontAwesomeIcon)`
-  &:hover {
-    color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -54,10 +51,13 @@ const Footer = () => (
       </CopyrightStatement>
       <div>
         <IconLink href="https://au.linkedin.com/in/alice-hendicott-04642011a">
-          <LinkedinIcon icon={faLinkedin} size="lg" />
+          <Icon icon={faLinkedin} size="lg" />
         </IconLink>
         <IconLink href="https://github.com/aliceHendicott/">
-          <GithubIcon icon={faGithubSquare} size="lg" />
+          <Icon icon={faGithubSquare} size="lg" />
+        </IconLink>
+        <IconLink href="https://codepen.io/alice2707">
+          <Icon icon={faCodepen} size="md" />
         </IconLink>
       </div>
     </FlexGrid>
