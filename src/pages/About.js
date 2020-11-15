@@ -4,21 +4,10 @@ import styled from "styled-components";
 import { PageTitle } from "../components/PageTitle";
 import { Contents } from "../components/Contents";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faReact,
-  faJs,
-  faCss3,
-  faHtml5,
-  faSass,
-  faWordpress,
-  faGit,
-} from "@fortawesome/free-brands-svg-icons";
-import scalaLogo from "../images/ScalaLogo.png";
-
 import PageHeader from "../components/PageHeader";
 import Resume from "../assets/Resume.pdf";
 import Timeline from "../components/about/timeline/Timeline";
+import Skills from "../components/about/Skills";
 
 const FeatureBoxHeader = styled(PageTitle)`
   margin-top: 6rem;
@@ -64,24 +53,6 @@ const FeatureBoxLink = styled.a.attrs({ role: "button" })`
   }
 `;
 
-const LogoContainer = styled.div`
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  box-sizing: border-box;
-  margin-top: 4rem;
-  margin-bottom: 6rem;
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-  font-size: 9rem;
-  color: ${({ theme }) => theme.colors.text02};
-`;
-
-const ScalaIcon = styled.img`
-  height: 9rem;
-`;
-
 const About = () => {
   return (
     <>
@@ -120,16 +91,7 @@ const About = () => {
       <FeatureBox>
         <Contents>
           <FeatureBoxHeader>Experience with</FeatureBoxHeader>
-          <LogoContainer>
-            <Icon icon={faReact} size="lg" title="React" />
-            <Icon icon={faJs} size="lg" title="Javascript" />
-            <Icon icon={faCss3} size="lg" title="CSS" />
-            <Icon icon={faSass} size="lg" title="Sass" />
-            <Icon icon={faHtml5} size="lg" title="HTML" />
-            <Icon icon={faWordpress} size="lg" title="Wordpress" />
-            <Icon icon={faGit} size="lg" title="Git" />
-            <ScalaIcon src={scalaLogo} title="Scala" />
-          </LogoContainer>
+          <Skills />
         </Contents>
       </FeatureBox>
     </>

@@ -9,10 +9,18 @@ import { ProjectCard } from "../components/portfolio/ProjectCard";
 
 const ProjectCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 100%;
   grid-gap: 40px;
   margin: 9rem 0;
   box-sizing: border-box;
+
+  ${({ theme }) => theme.breakpoints.medium} {
+    grid-template-columns: 80%;
+  }
+
+  ${({ theme }) => theme.breakpoints.large} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const Portfolio = () => {
