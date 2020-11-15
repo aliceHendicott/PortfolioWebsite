@@ -17,13 +17,8 @@ import {
 import scalaLogo from "../images/ScalaLogo.png";
 
 import PageHeader from "../components/PageHeader";
-
-import REAGroupLogo from "../images/REAGroupLogo.png";
-import qutLogo from "../images/qutLogo.jpg";
-import MCILogo from "../images/MCILogo.png";
 import Resume from "../assets/Resume.pdf";
-
-import Timeline, { TimelineItem } from "../components/Timeline";
+import Timeline from "../components/about/timeline/Timeline";
 
 const FeatureBoxHeader = styled(PageTitle)`
   margin-top: 6rem;
@@ -120,33 +115,7 @@ const About = () => {
       </FeatureBox>
       <Contents>
         <PageTitle>My Journey</PageTitle>
-        <Timeline>
-          <TimelineItem
-            title="Queensland University of Technology"
-            placement="left"
-            dateRange="Feb 2016 - Nov 2019"
-            logo={qutLogo}
-          >
-            Bachelor of Information Technology (Computer Science) and Bachelor
-            of Mathematics (Applied and Computational)
-          </TimelineItem>
-          <TimelineItem
-            title="MCI"
-            placement="right"
-            dateRange="Mar 2016 - Dec 2019"
-            logo={MCILogo}
-          >
-            Website Master (Wordpress)
-          </TimelineItem>
-          <TimelineItem
-            title="REA Group"
-            placement="left"
-            dateRange="Feb 2020 - present"
-            logo={REAGroupLogo}
-          >
-            Graduate Software Developer
-          </TimelineItem>
-        </Timeline>
+        <Timeline />
       </Contents>
       <FeatureBox>
         <Contents>

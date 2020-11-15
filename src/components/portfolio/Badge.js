@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Box from "./Box";
+import Box from "../Box";
 
 const StyledBox = styled(Box)`
   padding: 0 10px;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 import { Contents } from "../components/Contents";
 import { PageTitle } from "../components/PageTitle";
 import { NavLink } from "react-router-dom";

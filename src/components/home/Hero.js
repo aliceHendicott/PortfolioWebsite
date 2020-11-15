@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import profileImg from "../images/profile.png";
+import profileImg from "../../images/profile.png";
 
 const HeaderContainer = styled.div`
   background-image: ${({ theme }) =>

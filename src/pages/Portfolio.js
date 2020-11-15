@@ -5,7 +5,7 @@ import projects from "../data/projectDatabase";
 import PageHeader from "../components/PageHeader";
 import { Contents } from "../components/Contents";
 
-import { ProjectCard as NewProjectCard } from "../components/ProjectCard";
+import { ProjectCard } from "../components/portfolio/ProjectCard";
 
 const ProjectCardsContainer = styled.div`
   display: grid;
@@ -18,7 +18,7 @@ const ProjectCardsContainer = styled.div`
 const Portfolio = () => {
   const ProjectCards = projects.map(
     ({ imageSrc, title, link, description, badges }) => (
-      <NewProjectCard
+      <ProjectCard
         imageSrc={imageSrc}
         title={title}
         description={description}
