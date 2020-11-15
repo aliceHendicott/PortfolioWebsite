@@ -6,51 +6,53 @@ import { Contents } from "../components/Contents";
 import { PageTitle } from "../components/PageTitle";
 import { NavLink } from "react-router-dom";
 
-import { AboutIcon } from "../components/AboutIcon";
-
-import Box from "../components/Box";
+import AboutGraphic from "../images/About_Me_Graphic_2.png";
+import PortfolioGraphic from "../images/Portfolio_Graphic_2.png";
+import BlogGraphic from "../images/Blog_Graphic_2.png";
 
 const HeaderSmallerMargin = styled(PageTitle)`
   margin-top: 0rem;
 `;
 
-const BoxMenuContainer = styled.div`
-  margin: 9rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-`;
-
-const SvgContainer = styled.div`
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const MenuBox = styled(Box)`
-  padding: 30px;
-`;
-
-const MenuBoxTitle = styled.h2`
-  margin: 0;
-  font-size: 3rem;
-  font-weight: normal;
-`;
-
-const MenuBoxSubtitle = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
-const ContentsContainer = styled.div`
-  margin-top: 30px;
+const MenuGraphic = styled.img`
+  max-height: 100vh;
+  max-width: 100vw;
+  transition: all 0.5s;
 `;
 
 const MenuBoxLink = styled(NavLink)`
   text-decoration: none;
   color: inherit;
+  position: relative;
+
+  &:hover ${MenuGraphic} {
+    transform: scale(1.1);
+  }
+`;
+
+const GraphicsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 9rem 0;
+`;
+
+const GraphicTitle = styled.h2`
+  font-family: "Allura";
+  font-size: 3rem;
+  position: absolute;
+  bottom: ${({ bottom }) => bottom};
+  margin: 0;
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+
+  ${({ theme }) => theme.breakpoints.medium} {
+    font-size: 5.5rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.large} {
+    font-size: 8rem;
+  }
 `;
 
 const Home = () => {
@@ -77,38 +79,27 @@ const Home = () => {
           am currently working on improving my back end development skills by
           working on some of our customer systems.
         </p>
-        <BoxMenuContainer>
-          <MenuBoxLink to="/about">
-            <MenuBox>
-              <SvgContainer>
-                <AboutIcon />
-              </SvgContainer>
-              <ContentsContainer>
-                <MenuBoxSubtitle>Want to know more?</MenuBoxSubtitle>
-                <MenuBoxTitle>About</MenuBoxTitle>
-              </ContentsContainer>
-            </MenuBox>
-          </MenuBoxLink>
-          <MenuBoxLink to="/portfolio">
-            <MenuBox>
-              <SvgContainer></SvgContainer>
-              <ContentsContainer>
-                <MenuBoxSubtitle>Want to see some work?</MenuBoxSubtitle>
-                <MenuBoxTitle>Portfolio</MenuBoxTitle>
-              </ContentsContainer>
-            </MenuBox>
-          </MenuBoxLink>
-          <MenuBoxLink to="/blog">
-            <MenuBox>
-              <SvgContainer></SvgContainer>
-              <ContentsContainer>
-                <MenuBoxSubtitle>Want an interesting read?</MenuBoxSubtitle>
-                <MenuBoxTitle>Blog</MenuBoxTitle>
-              </ContentsContainer>
-            </MenuBox>
-          </MenuBoxLink>
-        </BoxMenuContainer>
       </Contents>
+      <GraphicsContainer>
+        <MenuBoxLink to="/about">
+          <MenuGraphic src={AboutGraphic} />
+          <GraphicTitle bottom={"15%"} left={"20%"}>
+            About
+          </GraphicTitle>
+        </MenuBoxLink>
+        <MenuBoxLink to="/portfolio">
+          <MenuGraphic src={PortfolioGraphic} />
+          <GraphicTitle bottom={"14%"} right={"22%"}>
+            Portfolio
+          </GraphicTitle>
+        </MenuBoxLink>
+        <MenuBoxLink to="/blog">
+          <MenuGraphic src={BlogGraphic} />
+          <GraphicTitle bottom={"10%"} left={"20%"}>
+            Blog
+          </GraphicTitle>
+        </MenuBoxLink>
+      </GraphicsContainer>
     </>
   );
 };
