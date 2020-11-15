@@ -107,7 +107,6 @@ const ItemContents = styled.p`
   font-size: 1.1rem;
   margin-bottom: 0;
   margin-top: 10px;
-  text-align: left;
 `;
 
 const ItemTopSection = styled.div`

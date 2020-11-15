@@ -48,6 +48,7 @@ const FeatureBox = styled.div`
 
 const FeatureBoxContents = styled(Contents)`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   height: 300px;

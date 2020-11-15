@@ -13,8 +13,12 @@ const HeaderContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   color: ${({ theme }) => theme.colors.primary};
+
+  ${({ theme }) => theme.breakpoints.medium} {
+    font-size: 5rem;
+  }
 `;
 
 const PageHeader = ({ children }) => (

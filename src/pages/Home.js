@@ -34,7 +34,7 @@ const GraphicsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 9rem 0;
+  margin: 6rem 0;
 `;
 
 const GraphicTitle = styled.h2`

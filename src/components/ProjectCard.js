@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Box from "./Box";
 import { Badge } from "./Badge";
-import { NavLink } from "react-router-dom";
 
 const ImageContainer = styled.div`
   height: 250px;
@@ -55,7 +54,6 @@ const ProjectTitle = styled.h2`
 `;
 
 const ProjectDescription = styled.p`
-  text-align: left;
   margin: 0;
 `;
 
