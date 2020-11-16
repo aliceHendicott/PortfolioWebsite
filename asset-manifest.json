@@ -1,24 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.53edd38b.chunk.css",
-    "main.js": "/static/js/main.7ae874f0.chunk.js",
-    "main.js.map": "/static/js/main.7ae874f0.chunk.js.map",
+    "main.css": "/static/css/main.6de98abf.chunk.css",
+    "main.js": "/static/js/main.1a5a210c.chunk.js",
+    "main.js.map": "/static/js/main.1a5a210c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a5fb0ec5.js",
     "runtime-main.js.map": "/static/js/runtime-main.a5fb0ec5.js.map",
-    "static/js/2.835d549d.chunk.js": "/static/js/2.835d549d.chunk.js",
-    "static/js/2.835d549d.chunk.js.map": "/static/js/2.835d549d.chunk.js.map",
+    "static/js/2.cd5df003.chunk.js": "/static/js/2.cd5df003.chunk.js",
+    "static/js/2.cd5df003.chunk.js.map": "/static/js/2.cd5df003.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.33eb7b565a7d7ab63953cf356fef777e.js": "/precache-manifest.33eb7b565a7d7ab63953cf356fef777e.js",
+    "precache-manifest.eec8246c7fae3e71b87cee907badf772.js": "/precache-manifest.eec8246c7fae3e71b87cee907badf772.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.53edd38b.chunk.css.map": "/static/css/main.53edd38b.chunk.css.map",
-    "static/js/2.835d549d.chunk.js.LICENSE.txt": "/static/js/2.835d549d.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/static/media/logo.5aa0d3a1.png",
-    "static/media/profile.png": "/static/media/profile.c9c5cfa9.png"
+    "static/css/main.6de98abf.chunk.css.map": "/static/css/main.6de98abf.chunk.css.map",
+    "static/js/2.cd5df003.chunk.js.LICENSE.txt": "/static/js/2.cd5df003.chunk.js.LICENSE.txt",
+    "static/media/About_Me_Graphic_2.png": "/static/media/About_Me_Graphic_2.1c050ca4.png",
+    "static/media/Blog_Graphic_2.png": "/static/media/Blog_Graphic_2.2579f781.png",
+    "static/media/MCILogo.png": "/static/media/MCILogo.92c34ab3.png",
+    "static/media/Portfolio_Graphic_2.png": "/static/media/Portfolio_Graphic_2.44c2d2c3.png",
+    "static/media/Resume.pdf": "/static/media/Resume.51aac9c6.pdf",
+    "static/media/ScalaLogo.png": "/static/media/ScalaLogo.18c0c275.png",
+    "static/media/csschallenges.png": "/static/media/csschallenges.00aedc36.png",
+    "static/media/githubConfetti.jpg": "/static/media/githubConfetti.2a716b24.jpg",
+    "static/media/logo.svg": "/static/media/logo.9736ac09.svg",
+    "static/media/profile.png": "/static/media/profile.c9c5cfa9.png",
+    "static/media/qutLogo.jpg": "/static/media/qutLogo.2a949510.jpg",
+    "static/media/tictactoe.png": "/static/media/tictactoe.0721b6fc.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a5fb0ec5.js",
-    "static/js/2.835d549d.chunk.js",
-    "static/css/main.53edd38b.chunk.css",
-    "static/js/main.7ae874f0.chunk.js"
+    "static/js/2.cd5df003.chunk.js",
+    "static/css/main.6de98abf.chunk.css",
+    "static/js/main.1a5a210c.chunk.js"
   ]
 }
