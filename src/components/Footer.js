@@ -2,36 +2,39 @@ import React from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-
-import { Contents } from "./Contents";
+import {
+  faLinkedin,
+  faGithubSquare,
+  faCodepen,
+} from "@fortawesome/free-brands-svg-icons";
 
 const FooterContainer = styled.div`
-  background-color: #393e41;
+  background-color: ${({ theme }) => theme.colors.primary};
   color: white;
   font-size: 1rem;
-  margin-top: 80px;
+  padding: 5px 10px;
 `;
 
 const FlexGrid = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  ${({ theme }) => theme.breakpoints.medium} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const CopyrightStatement = styled.div`
   font-size: 0.8rem;
-`;
-
-const LinkedinIcon = styled(FontAwesomeIcon)`
-  &:hover {
-    color: #0e76a8;
+  margin-bottom: 5px;
+  ${({ theme }) => theme.breakpoints.medium} {
+    margin-bottom: 0;
   }
 `;
 
-const GithubIcon = styled(FontAwesomeIcon)`
+const Icon = styled(FontAwesomeIcon)`
   &:hover {
-    color: #f5cee0;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -42,21 +45,22 @@ const IconLink = styled.a`
 
 const Footer = () => (
   <FooterContainer>
-    <Contents>
-      <FlexGrid>
-        <CopyrightStatement>
-          Copyright &copy; 2020 Alice Hendicott. All rights reserved.
-        </CopyrightStatement>
-        <div>
-          <IconLink href="https://au.linkedin.com/in/alice-hendicott-04642011a">
-            <LinkedinIcon icon={faLinkedin} size="lg" />
-          </IconLink>
-          <IconLink href="https://github.com/aliceHendicott/">
-            <GithubIcon icon={faGithubSquare} size="lg" />
-          </IconLink>
-        </div>
-      </FlexGrid>
-    </Contents>
+    <FlexGrid>
+      <CopyrightStatement>
+        Copyright &copy; 2020 Alice Hendicott. All rights reserved.
+      </CopyrightStatement>
+      <div>
+        <IconLink href="https://au.linkedin.com/in/alice-hendicott-04642011a">
+          <Icon icon={faLinkedin} size="lg" />
+        </IconLink>
+        <IconLink href="https://github.com/aliceHendicott/">
+          <Icon icon={faGithubSquare} size="lg" />
+        </IconLink>
+        <IconLink href="https://codepen.io/alice2707">
+          <Icon icon={faCodepen} size="md" />
+        </IconLink>
+      </div>
+    </FlexGrid>
   </FooterContainer>
 );
 
