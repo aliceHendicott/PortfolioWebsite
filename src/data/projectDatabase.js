@@ -5,7 +5,7 @@ const projects = [
     link:
       "https://chrome.google.com/webstore/detail/github-confetti/dkdgopcaioggfmpkljgmgnjhmblldcpb",
     description:
-      "A chrome extension bringing excitement in the form of confetti to checkboxes across Github.",
+      "A chrome extension bringing joy to Github checkboxes in the form of confetti.",
     badges: [
       { badge: "Javascript", color: "#F7DF1E" },
       { badge: "Web Extension", color: "#0D9D58" },
