@@ -14,6 +14,11 @@ const BurgerButtonContainer = styled.div`
     state === "entering" || state === "entered" || state === "exiting"
       ? 15
       : 0};
+  position: ${({ state }) =>
+    state === "entering" || state === "entered" || state === "exiting"
+      ? "fixed"
+      : "auto"};
+  right: 40px;
 
   & > div {
     width: 40px;
